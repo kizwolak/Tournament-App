@@ -26,5 +26,20 @@ namespace TrackerUI
         {
 
         }
+
+        private void CreatePrizeHeader_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CreatePrizeButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

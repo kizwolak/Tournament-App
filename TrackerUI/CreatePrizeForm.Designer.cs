@@ -37,7 +37,7 @@
             PlaceNameLabel = new Label();
             PlaceNumberInput = new TextBox();
             PlaceNumberLabel = new Label();
-            label1 = new Label();
+            OrLabel = new Label();
             CreatePrizeButton = new Button();
             SuspendLayout();
             // 
@@ -52,6 +52,7 @@
             CreatePrizeHeader.Size = new Size(199, 46);
             CreatePrizeHeader.TabIndex = 14;
             CreatePrizeHeader.Text = "Create Prize";
+            CreatePrizeHeader.Click += CreatePrizeHeader_Click;
             // 
             // PrizePercentageInput
             // 
@@ -134,17 +135,18 @@
             PlaceNumberLabel.TabIndex = 24;
             PlaceNumberLabel.Text = "Place No.";
             // 
-            // label1
+            // OrLabel
             // 
-            label1.AutoSize = true;
-            label1.BackColor = SystemColors.Window;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            label1.ForeColor = SystemColors.MenuHighlight;
-            label1.Location = new Point(377, 259);
-            label1.Name = "label1";
-            label1.Size = new Size(31, 28);
-            label1.TabIndex = 31;
-            label1.Text = "or";
+            OrLabel.AutoSize = true;
+            OrLabel.BackColor = SystemColors.Window;
+            OrLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            OrLabel.ForeColor = SystemColors.MenuHighlight;
+            OrLabel.Location = new Point(377, 259);
+            OrLabel.Name = "OrLabel";
+            OrLabel.Size = new Size(31, 28);
+            OrLabel.TabIndex = 31;
+            OrLabel.Text = "or";
+            OrLabel.Click += label1_Click;
             // 
             // CreatePrizeButton
             // 
@@ -159,6 +161,7 @@
             CreatePrizeButton.TabIndex = 32;
             CreatePrizeButton.Text = "Create Prize";
             CreatePrizeButton.UseVisualStyleBackColor = true;
+            CreatePrizeButton.Click += CreatePrizeButton_Click;
             // 
             // CreatePrizeForm
             // 
@@ -167,7 +170,7 @@
             BackColor = SystemColors.Window;
             ClientSize = new Size(800, 450);
             Controls.Add(CreatePrizeButton);
-            Controls.Add(label1);
+            Controls.Add(OrLabel);
             Controls.Add(PrizePercentageInput);
             Controls.Add(PrizePercentageLabel);
             Controls.Add(PrizeAmountInput);
@@ -196,7 +199,7 @@
         private Label PlaceNameLabel;
         private TextBox PlaceNumberInput;
         private Label PlaceNumberLabel;
-        private Label label1;
+        private Label OrLabel;
         private Button CreatePrizeButton;
     }
 }
