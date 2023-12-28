@@ -40,7 +40,7 @@
             TeamOneScore = new TextBox();
             TeamTwoScore = new TextBox();
             VersusLabel = new Label();
-            ScoreButton = new Button();
+            EndMatchButton = new Button();
             SuspendLayout();
             // 
             // TournamentHeader
@@ -172,20 +172,20 @@
             VersusLabel.TabIndex = 11;
             VersusLabel.Text = "-VS-";
             // 
-            // ScoreButton
+            // EndMatchButton
             // 
-            ScoreButton.FlatAppearance.BorderColor = Color.Silver;
-            ScoreButton.FlatAppearance.MouseDownBackColor = Color.Gray;
-            ScoreButton.FlatAppearance.MouseOverBackColor = Color.Black;
-            ScoreButton.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            ScoreButton.ForeColor = SystemColors.HotTrack;
-            ScoreButton.Location = new Point(416, 248);
-            ScoreButton.Name = "ScoreButton";
-            ScoreButton.Size = new Size(155, 66);
-            ScoreButton.TabIndex = 12;
-            ScoreButton.Text = "End Match";
-            ScoreButton.UseVisualStyleBackColor = true;
-            ScoreButton.Click += button1_Click;
+            EndMatchButton.FlatAppearance.BorderColor = Color.Silver;
+            EndMatchButton.FlatAppearance.MouseDownBackColor = Color.Gray;
+            EndMatchButton.FlatAppearance.MouseOverBackColor = Color.Black;
+            EndMatchButton.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            EndMatchButton.ForeColor = SystemColors.HotTrack;
+            EndMatchButton.Location = new Point(416, 248);
+            EndMatchButton.Name = "EndMatchButton";
+            EndMatchButton.Size = new Size(155, 66);
+            EndMatchButton.TabIndex = 12;
+            EndMatchButton.Text = "End Match";
+            EndMatchButton.UseVisualStyleBackColor = true;
+            EndMatchButton.Click += button1_Click;
             // 
             // TournamentViewerForm
             // 
@@ -193,7 +193,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(700, 382);
-            Controls.Add(ScoreButton);
+            Controls.Add(EndMatchButton);
             Controls.Add(VersusLabel);
             Controls.Add(TeamTwoScore);
             Controls.Add(TeamOneScore);
@@ -228,6 +228,6 @@
         private TextBox TeamOneScore;
         private TextBox TeamTwoScore;
         private Label VersusLabel;
-        private Button ScoreButton;
+        private Button EndMatchButton;
     }
 }
