@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TournamentApp;
 using TrackerLibrary;
+using TrackerLibrary.DataAccess;
+using TrackerLibrary.Models;
 
 namespace TrackerUI
 {
@@ -82,9 +83,20 @@ namespace TrackerUI
         {
             if (ValidateForm())
             {
-                PrizeModel model = new PrizeModel(PlaceNameInput.Text, PlaceNumberInput.Text, PrizeAmountInput.Text, PrizePercentageInput.Text);
+                PrizeModel model = new PrizeModel(
+                    PlaceNameInput.Text, 
+                    PlaceNumberInput.Text, 
+                    PrizeAmountInput.Text, 
+                    PrizePercentageInput.Text);
 
+                foreach (IDataConnection db in GlobalConfig.Connections)
+                {
+                    db.CreatePrize(model);
+                }
 
+            } else
+            {
+                MessageBox.Show("This form has invalid information. Please check it and try again.");
             }
         }
 
