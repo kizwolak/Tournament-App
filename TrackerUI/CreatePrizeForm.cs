@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TournamentApp;
+using TrackerLibrary;
 
 namespace TrackerUI
 {
@@ -38,10 +40,10 @@ namespace TrackerUI
             }
 
             decimal prizeAmount = 0;
-            int prizePercentage = 0;
+            double prizePercentage = 0;
 
             bool prizeAmountValid = decimal.TryParse(PrizeAmountInput.Text, out prizeAmount);
-            bool prizePercentageValid = int.TryParse(PrizeAmountInput.Text, out prizePercentage);
+            bool prizePercentageValid = double.TryParse(PrizePercentageInput.Text, out prizePercentage);
 
             if (prizeAmountValid == false || prizePercentageValid == false)
             {
@@ -78,7 +80,12 @@ namespace TrackerUI
 
         private void CreatePrizeButton_Click(object sender, EventArgs e)
         {
+            if (ValidateForm())
+            {
+                PrizeModel model = new PrizeModel(PlaceNameInput.Text, PlaceNumberInput.Text, PrizeAmountInput.Text, PrizePercentageInput.Text);
 
+
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
