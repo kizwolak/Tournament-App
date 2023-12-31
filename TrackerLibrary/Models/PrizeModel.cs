@@ -8,6 +8,8 @@ namespace TrackerLibrary.Models
 {
     public class PrizeModel
     {
+        /* pamietaj, zeby stworzyc jeszcze raz dbo.Prizes!! */
+
         public int Id { get; set; }
         public int PlaceNumber { get; set; }
         public string PlaceName { get; set; }
