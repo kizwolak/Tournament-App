@@ -27,7 +27,7 @@ namespace TrackerUI
 
             bool placeNumberValidNumber = int.TryParse(PlaceNumberInput.Text, out placeNumber);
 
-            if (!placeNumberValidNumber == false)
+            if (placeNumberValidNumber == false)
             {
                 output = false;
             }
@@ -46,12 +46,12 @@ namespace TrackerUI
             bool prizeAmountValid = decimal.TryParse(PrizeAmountInput.Text, out prizeAmount);
             bool prizePercentageValid = double.TryParse(PrizePercentageInput.Text, out prizePercentage);
 
-            if (prizeAmountValid == false || prizePercentageValid == false)
+            if (prizeAmountValid == false && prizePercentageValid == false)
             {
                 output = false;
             }
 
-            if (prizeAmount <= 0 || prizePercentage <= 0)
+            if (prizeAmount <= 0 && prizePercentage <= 0)
             {
                 output = false;
             }
