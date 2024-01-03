@@ -89,10 +89,7 @@ namespace TrackerUI
                     PrizeAmountInput.Text, 
                     PrizePercentageInput.Text);
 
-                foreach (IDataConnection db in GlobalConfig.Connections)
-                {
-                    db.CreatePrize(model);
-                }
+                GlobalConfig.Connection.CreatePrize(model);
 
             } else
             {

@@ -10,21 +10,21 @@ namespace TrackerLibrary
 {
     public static class GlobalConfig
     {
-        public static IDataConnection Connections { get; private set; }
+        public static IDataConnection Connection { get; private set; }
 
         public static void InitializeConnections(DatabaseType db)
         {
             if (db == DatabaseType.Sql) { 
             //TODO - create SQL connection
                 SqlConnector sql = new SqlConnector();
-                Connections = sql;
+                Connection = sql;
             }
 
             else if (db == DatabaseType.TextFile)
             {
                 //TODO - create text file connection
                 TextConnector text = new TextConnector();
-                Connections = text;
+                Connection = text;
             }
         }
         public static string CnnString(string name)
