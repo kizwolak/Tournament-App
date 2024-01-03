@@ -19,6 +19,17 @@ namespace TrackerUI
         public CreateTeamForm()
         {
             InitializeComponent();
+            List<PersonModel> persons = new List<PersonModel>();
+            persons = GlobalConfig.Connection.FetchPersons();
+
+
+            if (persons.Count > 0)
+            {
+                foreach (PersonModel person in persons)
+                {
+                    TeamPlayersListBox.Items.Add($"{ person.FirstName } { person.LastName }");
+                }
+            }
         }
 
         private bool ValidateNewPlayerForm()

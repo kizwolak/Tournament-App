@@ -20,9 +20,9 @@ namespace TrackerLibrary.DataAccess
                 p.Add("@PlaceName", model.PlaceName);
                 p.Add("@PrizeAmount", model.PrizeAmount);
                 p.Add("@PrizePercentage", model.PrizePercentage);
-                p.Add("@id", 0, dbType:DbType.Int32, direction: ParameterDirection.Output);
+                p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
 
-                connection.Execute("dbo.spPrizes_Insert", p, commandType:CommandType.StoredProcedure);
+                connection.Execute("dbo.spPrizes_Insert", p, commandType: CommandType.StoredProcedure);
 
                 model.Id = p.Get<int>("@id");
 
@@ -45,5 +45,14 @@ namespace TrackerLibrary.DataAccess
                 return model;
             }
         }
+        public List<PersonModel> FetchPersons()
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString("Tournaments")))
+            {
+                List<PersonModel> persons = connection.Query<PersonModel>("dbo.spGetAllPersons").ToList();
+                return persons;
+            }
+        }
+
     }
 }
