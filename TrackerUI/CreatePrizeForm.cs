@@ -91,6 +91,11 @@ namespace TrackerUI
 
                 GlobalConfig.Connection.CreatePrize(model);
 
+                PlaceNameInput.Text = "";
+                PlaceNumberInput.Text = "";
+                PrizeAmountInput.Text = "";
+                PrizePercentageInput.Text = "";
+
             } else
             {
                 MessageBox.Show("This form has invalid information. Please check it and try again.");
