@@ -11,6 +11,22 @@ namespace TrackerLibrary.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string EmailAddress { get; set; }
-        public string CellphoneNumber { get; set; }
+        public int PhoneNumber { get; set; }
+
+        public PersonModel()
+        {
+
+        }
+        public PersonModel(string firstName, string lastName, string emailAddress, string phoneNumber)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            EmailAddress = emailAddress;
+
+            int phoneNo = 0;
+            int.TryParse(phoneNumber, out phoneNo);
+            PhoneNumber = phoneNo;
+        }
+
     }
 }

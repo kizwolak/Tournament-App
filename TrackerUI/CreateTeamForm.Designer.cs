@@ -35,15 +35,15 @@
             CreateTeamHeader = new Label();
             AddPlayerButton = new Button();
             CreateNewPlayerGroupBox = new GroupBox();
-            FirstNameLabel = new Label();
-            FirstNameInput = new TextBox();
-            LastNameInput = new TextBox();
-            LastNameLabel = new Label();
-            PlayerEmailInput = new TextBox();
-            PlayerEmailLabel = new Label();
+            CreatePlayerButton = new Button();
             PlayerPhoneInput = new TextBox();
             PlayerPhoneLabel = new Label();
-            CreatePlayerButton = new Button();
+            PlayerEmailInput = new TextBox();
+            PlayerEmailLabel = new Label();
+            LastNameInput = new TextBox();
+            LastNameLabel = new Label();
+            FirstNameInput = new TextBox();
+            FirstNameLabel = new Label();
             TeamPlayersListBox = new ListBox();
             RemovePlayerButton = new Button();
             CreateTeamButton = new Button();
@@ -138,44 +138,39 @@
             CreateNewPlayerGroupBox.Text = "Create Player";
             CreateNewPlayerGroupBox.Enter += CreateNewPlayerGroupBox_Enter;
             // 
-            // FirstNameLabel
+            // CreatePlayerButton
             // 
-            FirstNameLabel.AutoSize = true;
-            FirstNameLabel.BackColor = SystemColors.Window;
-            FirstNameLabel.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            FirstNameLabel.ForeColor = SystemColors.MenuHighlight;
-            FirstNameLabel.Location = new Point(6, 39);
-            FirstNameLabel.Name = "FirstNameLabel";
-            FirstNameLabel.Size = new Size(97, 25);
-            FirstNameLabel.TabIndex = 16;
-            FirstNameLabel.Text = "First Name";
+            CreatePlayerButton.FlatAppearance.BorderColor = Color.Silver;
+            CreatePlayerButton.FlatAppearance.MouseDownBackColor = Color.Gray;
+            CreatePlayerButton.FlatAppearance.MouseOverBackColor = Color.Black;
+            CreatePlayerButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            CreatePlayerButton.ForeColor = SystemColors.HotTrack;
+            CreatePlayerButton.Location = new Point(71, 255);
+            CreatePlayerButton.Name = "CreatePlayerButton";
+            CreatePlayerButton.Size = new Size(148, 46);
+            CreatePlayerButton.TabIndex = 16;
+            CreatePlayerButton.Text = "Create Player";
+            CreatePlayerButton.UseVisualStyleBackColor = true;
+            CreatePlayerButton.Click += button1_Click;
             // 
-            // FirstNameInput
+            // PlayerPhoneInput
             // 
-            FirstNameInput.Location = new Point(117, 39);
-            FirstNameInput.Name = "FirstNameInput";
-            FirstNameInput.Size = new Size(164, 34);
-            FirstNameInput.TabIndex = 16;
+            PlayerPhoneInput.Location = new Point(117, 201);
+            PlayerPhoneInput.Name = "PlayerPhoneInput";
+            PlayerPhoneInput.Size = new Size(164, 34);
+            PlayerPhoneInput.TabIndex = 21;
             // 
-            // LastNameInput
+            // PlayerPhoneLabel
             // 
-            LastNameInput.Location = new Point(117, 95);
-            LastNameInput.Name = "LastNameInput";
-            LastNameInput.Size = new Size(164, 34);
-            LastNameInput.TabIndex = 17;
-            // 
-            // LastNameLabel
-            // 
-            LastNameLabel.AutoSize = true;
-            LastNameLabel.BackColor = SystemColors.Window;
-            LastNameLabel.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            LastNameLabel.ForeColor = SystemColors.MenuHighlight;
-            LastNameLabel.Location = new Point(6, 95);
-            LastNameLabel.Name = "LastNameLabel";
-            LastNameLabel.Size = new Size(95, 25);
-            LastNameLabel.TabIndex = 18;
-            LastNameLabel.Text = "Last Name";
-            LastNameLabel.Click += label2_Click;
+            PlayerPhoneLabel.AutoSize = true;
+            PlayerPhoneLabel.BackColor = SystemColors.Window;
+            PlayerPhoneLabel.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            PlayerPhoneLabel.ForeColor = SystemColors.MenuHighlight;
+            PlayerPhoneLabel.Location = new Point(6, 201);
+            PlayerPhoneLabel.Name = "PlayerPhoneLabel";
+            PlayerPhoneLabel.Size = new Size(92, 25);
+            PlayerPhoneLabel.TabIndex = 22;
+            PlayerPhoneLabel.Text = "Phone no.";
             // 
             // PlayerEmailInput
             // 
@@ -197,39 +192,44 @@
             PlayerEmailLabel.Text = "E-mail";
             PlayerEmailLabel.Click += PlayerEmail_Click;
             // 
-            // PlayerPhoneInput
+            // LastNameInput
             // 
-            PlayerPhoneInput.Location = new Point(117, 201);
-            PlayerPhoneInput.Name = "PlayerPhoneInput";
-            PlayerPhoneInput.Size = new Size(164, 34);
-            PlayerPhoneInput.TabIndex = 21;
+            LastNameInput.Location = new Point(117, 95);
+            LastNameInput.Name = "LastNameInput";
+            LastNameInput.Size = new Size(164, 34);
+            LastNameInput.TabIndex = 17;
             // 
-            // PlayerPhoneLabel
+            // LastNameLabel
             // 
-            PlayerPhoneLabel.AutoSize = true;
-            PlayerPhoneLabel.BackColor = SystemColors.Window;
-            PlayerPhoneLabel.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 238);
-            PlayerPhoneLabel.ForeColor = SystemColors.MenuHighlight;
-            PlayerPhoneLabel.Location = new Point(6, 201);
-            PlayerPhoneLabel.Name = "PlayerPhoneLabel";
-            PlayerPhoneLabel.Size = new Size(92, 25);
-            PlayerPhoneLabel.TabIndex = 22;
-            PlayerPhoneLabel.Text = "Phone no.";
+            LastNameLabel.AutoSize = true;
+            LastNameLabel.BackColor = SystemColors.Window;
+            LastNameLabel.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            LastNameLabel.ForeColor = SystemColors.MenuHighlight;
+            LastNameLabel.Location = new Point(6, 95);
+            LastNameLabel.Name = "LastNameLabel";
+            LastNameLabel.Size = new Size(95, 25);
+            LastNameLabel.TabIndex = 18;
+            LastNameLabel.Text = "Last Name";
+            LastNameLabel.Click += label2_Click;
             // 
-            // CreatePlayerButton
+            // FirstNameInput
             // 
-            CreatePlayerButton.FlatAppearance.BorderColor = Color.Silver;
-            CreatePlayerButton.FlatAppearance.MouseDownBackColor = Color.Gray;
-            CreatePlayerButton.FlatAppearance.MouseOverBackColor = Color.Black;
-            CreatePlayerButton.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            CreatePlayerButton.ForeColor = SystemColors.HotTrack;
-            CreatePlayerButton.Location = new Point(71, 255);
-            CreatePlayerButton.Name = "CreatePlayerButton";
-            CreatePlayerButton.Size = new Size(148, 46);
-            CreatePlayerButton.TabIndex = 16;
-            CreatePlayerButton.Text = "Create Player";
-            CreatePlayerButton.UseVisualStyleBackColor = true;
-            CreatePlayerButton.Click += button1_Click;
+            FirstNameInput.Location = new Point(117, 39);
+            FirstNameInput.Name = "FirstNameInput";
+            FirstNameInput.Size = new Size(164, 34);
+            FirstNameInput.TabIndex = 16;
+            // 
+            // FirstNameLabel
+            // 
+            FirstNameLabel.AutoSize = true;
+            FirstNameLabel.BackColor = SystemColors.Window;
+            FirstNameLabel.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 238);
+            FirstNameLabel.ForeColor = SystemColors.MenuHighlight;
+            FirstNameLabel.Location = new Point(6, 39);
+            FirstNameLabel.Name = "FirstNameLabel";
+            FirstNameLabel.Size = new Size(97, 25);
+            FirstNameLabel.TabIndex = 16;
+            FirstNameLabel.Text = "First Name";
             // 
             // TeamPlayersListBox
             // 
