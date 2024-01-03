@@ -8,7 +8,7 @@ namespace TrackerUI
         [STAThread]
         static void Main()
         {
-            TrackerLibrary.GlobalConfig.InitializeConnections(true, true);
+            TrackerLibrary.GlobalConfig.InitializeConnections(TrackerLibrary.DatabaseType.Sql);
 
             ApplicationConfiguration.Initialize();
             Application.Run(new CreatePrizeForm());
